@@ -84,6 +84,13 @@ header {
   padding-top: 5px;
 }
 
+.top_menu {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  margin: auto;
+}
+
 .top_menu li,
 .top_menu a {
   font-size: 1rem;
@@ -97,11 +104,10 @@ header {
   text-decoration: underline;
 }
 
-ul {
-  display: flex;
-  list-style: none;
-  padding-left: 0;
-  margin: auto;
+/* Hide the toggle button for larger screens */
+#menu_toggle {
+  /* Hidden by default */
+  display: none;
 }
 
 /* For tabelts - on screens that are 992px or less: */
@@ -129,13 +135,49 @@ ul {
     grid-column: 1 / span 4;
     justify-content: space-between;
     align-items: flex-start;
+    /* ************ HERE ************* */
     /* flex-direction: column; */
     /* flex-direction: row-reverse; */
+  }
+
+  #logo_small {
+    height: 2rem;
+    width: auto;
+    margin-left: 0;
+  }
+
+  /* Show toggle button on small screens */
+  #menu_toggle {
+    display: inline-block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--darken);
+  }
+
+  /* Hide navigation menu by default */
+  #nav_menu {
+    display: none;
+  }
+
+  /* Display navigation when menu is active */
+  #nav_menu.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #button_menu_container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
   }
 
   .top_menu {
     display: flex;
     flex-direction: column;
+    align-items: end;
   }
 
   .top_menu li,
@@ -143,12 +185,6 @@ ul {
     margin-bottom: 1vw;
     margin-top: 1vw;
   }
-}
-
-#logo_small {
-  height: 2rem;
-  width: auto;
-  margin-left: 0;
 }
 
 /* MAIN */
