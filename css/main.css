@@ -1,0 +1,736 @@
+* {
+  font-family: "neue-kabel", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  --darken: #000049;
+  --ivory: #fefbea;
+  --folly: #fe0049;
+  --picton: #00a7e8;
+  --aureolin: #f7f701;
+}
+
+body {
+  background-color: var(--ivory);
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 1vw;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1rem;
+  margin: 1vw;
+  font-weight: 700;
+}
+
+h2 a {
+  color: var(--picton);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+h2 a:hover {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+p {
+  margin: 1vw;
+}
+
+p a {
+  color: var(--picton);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+b {
+  font-weight: 700;
+}
+
+/* HEADER */
+
+header {
+  display: grid;
+  grid-template-columns: 6vw 6vw 18vw 18vw 18vw 18vw 6vw 6vw;
+  grid-template-rows: auto;
+}
+
+#header_menu {
+  grid-column: 3 / span 4;
+  border-bottom: 1px solid var(--darken);
+  display: flex;
+  /* align-items: start; */
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 5px;
+  margin-left: 1vw;
+}
+
+#logo_small {
+  width: 2rem;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.top_menu li,
+.top_menu a {
+  font-size: 1rem;
+  color: var(--darken);
+  text-decoration: none;
+  margin-right: 1vw;
+  margin-left: 1vw;
+}
+
+.top_menu a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  margin: auto;
+}
+
+/* For tabelts - on screens that are 992px or less: */
+/* The following screen size was adapted from https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp Accessed: 2023-11-14 */
+@media screen and (max-width: 992px) {
+  header {
+    display: grid;
+    grid-template-columns: 6vw 21vw 21vw 21vw 21vw 6vw;
+  }
+
+  #header_menu {
+    grid-column: 2 / span 4;
+  }
+}
+
+/* For phones - on screens that are 600px or less: */
+/* The following screen size was adapted from https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp Accessed: 2023-11-14 */
+@media screen and (max-width: 600px) {
+  header {
+    display: grid;
+    grid-template-columns: 24vw 24vw 24vw 24vw;
+  }
+
+  #header_menu {
+    grid-column: 1 / span 4;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* flex-direction: column; */
+    /* flex-direction: row-reverse; */
+  }
+
+  .top_menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .top_menu li,
+  .top_menu a {
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+  }
+}
+
+#logo_small {
+  height: 2rem;
+  width: auto;
+  margin-left: 0;
+}
+
+/* MAIN */
+
+main {
+  display: grid;
+  grid-template-columns: 6vw 6vw 18vw 18vw 18vw 18vw 6vw 6vw;
+}
+
+.main_content {
+  grid-column: 3 / span 4;
+  display: grid;
+  grid-template-rows: auto;
+}
+
+/* For tabelts - on screens that are 992px or less: */
+@media screen and (max-width: 992px) {
+  main {
+    display: grid;
+    grid-template-columns: 6vw 21vw 21vw 21vw 21vw 6vw;
+  }
+
+  .main_content {
+    grid-column: 2 / span 4;
+  }
+}
+
+/* For phones - on screens that are 600px or less: */
+@media screen and (max-width: 600px) {
+  main {
+    display: grid;
+    grid-template-columns: 24vw 24vw 24vw 24vw;
+  }
+
+  .main_content {
+    grid-column: 1 / span 4;
+  }
+}
+
+/* For: index.html */
+
+.container {
+  display: grid;
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+  width: 12rem;
+  height: auto;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  /* border: 1px solid black; */
+}
+
+.logo_letter_o {
+  width: 100%;
+  height: 100%;
+  grid-column: 1;
+  grid-row: 1;
+  /* display: block; */
+  /* position: relative; */
+  z-index: 1;
+  mix-blend-mode: darken;
+  /* border: 1px solid red; */
+}
+
+.logo_letter_p {
+  width: 100%;
+  height: 100%;
+  grid-column: 1;
+  grid-row: 1;
+  /* display: block; */
+  /* position: relative; */
+  z-index: 1;
+  mix-blend-mode: darken;
+  /* border: 1px solid green; */
+  margin-top: -4.3rem;
+  margin-left: 0.25rem;
+  /* margin-right: 103px; */
+  animation-name: move_letter;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-direction: alternate;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.logo_oskar {
+  width: 100%;
+  height: 100%;
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 0;
+  /* border: 1px solid blue; */
+  /* display: none; */
+  animation-name: show_logo;
+  animation-duration: 5s;
+}
+
+@keyframes move_letter {
+  0% {
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  60% {
+    -ms-transform: translateX(-2.19rem);
+    -webkit-transform: translateX(-2.19rem);
+    -moz-transform: translateX(-2.19rem);
+    -o-transform: translateX(-2.19rem);
+    transform: translateX(-2.19rem);
+  }
+
+  100% {
+    -ms-transform: translateX(-0.12rem) translateY(2.14rem);
+    -webkit-transform: translateX(-0.12rem) translateY(2.14rem);
+    -moz-transform: translateX(-0.12rem) translateY(2.14rem);
+    -o-transform: translateX(-0.12rem) translateY(2.14rem);
+    transform: translateX(-0.12rem) translateY(2.14rem);
+  }
+}
+
+@keyframes show_logo {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* For: work.html */
+
+.project_thumbnails {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  justify-items: start;
+}
+
+.grid_item_thumbnails {
+  width: fit-content;
+  justify-content: center;
+  align-content: center;
+}
+
+.figure_thumbnails {
+  display: grid;
+}
+
+.grid_item_thumbnails a,
+.grid_item_thumbnails figcaption {
+  font-size: 1rem;
+  color: var(--darken);
+  text-decoration: none;
+  /* margin-left: 1.5vw;
+  margin-right: 1.5vw; */
+  text-align: center;
+  /* Center within the container */
+  margin: 0 auto;
+}
+
+.grid_item_thumbnails a:hover {
+  text-decoration: underline;
+}
+
+.figcaptext {
+  font-size: 1rem;
+  margin: auto;
+  color: #000000;
+  text-decoration: none;
+  /* margin-left: 3vw;
+  margin-right: 3vw; */
+  text-align: center;
+  width: 100%;
+  /* Center within the container */
+  margin: 0 auto;
+}
+
+.figure_thumbnails {
+  margin: 1vw;
+  font-size: 1rem;
+  color: var(--darken);
+  text-decoration: none;
+}
+
+.img_thumbnails {
+  width: 100%;
+}
+
+/* For tabelts - on screens that are 992px or less: */
+@media screen and (max-width: 992px) {
+  .project_thumbnails {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid_item_thumbnails a,
+  .grid_item_thumbnails figcaption {
+    /* margin-left: 3vw;
+    margin-right: 3vw; */
+    margin: 0 auto;
+  }
+
+  .figcaptext {
+    /* margin-left: 6vw;
+    margin-right: 6vw; */
+    margin: 0 auto;
+  }
+}
+
+/* For phones - on screens that are 600px or less: */
+@media screen and (max-width: 600px) {
+  .project_thumbnails {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .grid_item_thumbnails a,
+  .grid_item_thumbnails figcaption {
+    /* margin-left: 7vw;
+    margin-right: 7vw; */
+    margin: 0 auto;
+  }
+
+  .figcaptext {
+    /* margin-left: 14vw;
+    margin-right: 14vw; */
+    margin: 0 auto;
+  }
+}
+
+/* For: detailed information about a project */
+
+.project_detailed {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
+.grid_items_detailed {
+  width: auto;
+}
+
+.figure_detailed {
+  margin-left: 1vw;
+  margin-right: 1vw;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.back_link {
+  margin-bottom: 0;
+}
+
+.back_link a {
+  font-size: 1rem;
+  color: var(--picton);
+  text-decoration: none;
+}
+
+.back_link a:hover {
+  text-decoration: underline;
+}
+
+.img_detailed {
+  width: 100%;
+}
+
+.img_detailed_cover {
+  width: 40%;
+}
+
+/* For tabelts - on screens that are 601px or more: */
+@media screen and (min-width: 601px) {
+  .img_detailed {
+    width: 85%;
+  }
+}
+
+/* For desktop - on screens that are 993px or more: */
+@media screen and (min-width: 993px) {
+  .img_detailed {
+    width: 75%;
+  }
+}
+
+/* For: chemistry.html */
+
+#publication-section {
+  margin-left: 1vw;
+}
+
+.publication-year {
+  font-size: 1.25rem;
+  /* margin-top: 2vw; */
+  margin-left: 0;
+  font-weight: 600;
+}
+
+#publication-list {
+  list-style: decimal;
+  padding-left: 0;
+  margin-bottom: 1vw;
+}
+
+.publication-item {
+  padding-bottom: 15px;
+  margin-left: 3vw;
+}
+
+.publication-title {
+  font-weight: 600;
+  display: block;
+}
+
+.publication-item p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.journal i,
+i {
+  font-style: italic;
+}
+
+.publication-item b {
+  font-weight: 600;
+}
+
+u {
+  text-decoration: underline;
+}
+
+.doi {
+  display: block;
+  margin-top: 5px;
+}
+
+.publication-item a {
+  color: var(--picton);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.publication-item a:hover {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* For: about.html */
+
+/* Flexbox to place image and text side by side */
+#main_img_text_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Image styles */
+#main_img {
+  flex: 1;
+}
+
+#main_text {
+  flex: 3;
+}
+
+/* For tabelts - on screens that are 992px or less: */
+@media screen and (max-width: 992px) {
+  /* Stack the image on top of the text for medium screens */
+  #main_img_text_container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Make the image appear first */
+  #main_img {
+    /* Place the image above the text */
+    order: -1;
+    width: 100%;
+    text-align: center;
+    /* Space between image and text */
+    margin-bottom: 1rem;
+  }
+
+  /* Ensure text follows the image */
+  #main_text {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.img_op {
+  width: 12rem;
+  height: auto;
+  /* Make the image circular */
+  border-radius: 50%;
+  /* Ensure the image scales properly within the circle */
+  object-fit: cover;
+  /* Add a border */
+  border: 1px solid var(--darken);
+  /* margin-left: 1vw; */
+  /* The following 3 lines of code was adapted from https://www.w3.org/Style/Examples/007/center.en.tmpl#block Accessed: 2023-11-16 */
+  /* display: block;
+  margin-left: auto;
+  margin-right: auto; */
+}
+
+/* For: contact.html */
+
+#contact-methods {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 0;
+  margin-left: 1vw;
+  margin-bottom: 1vw;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  width: 1rem;
+}
+
+.contact-links {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-links a {
+  font-size: 1rem;
+  color: var(--picton);
+  text-decoration: none;
+  margin-left: 1vw;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+/* For tabelts - on screens that are 992px or less: */
+@media screen and (max-width: 992px) {
+  #cont_email,
+  #cont_name,
+  #cont_topic,
+  #cont_button {
+    width: 60%;
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+
+  #cont_text {
+    width: 80%;
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+
+  #popup_container {
+    width: 45vw;
+    height: auto;
+    top: 30%;
+  }
+
+  #cont_button_close {
+    width: 43vw;
+  }
+}
+
+/* For phones - on screens that are 600px or less: */
+@media screen and (max-width: 600px) {
+  #cont_email,
+  #cont_name,
+  #cont_topic,
+  #cont_text,
+  #cont_button {
+    width: 96%;
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+
+  #popup_container {
+    width: 75vw;
+    height: auto;
+    top: 35%;
+  }
+
+  #cont_button_close {
+    width: 73vw;
+  }
+}
+
+/* FOOTER */
+
+footer {
+  display: grid;
+  grid-template-columns: 6vw 6vw 18vw 18vw 18vw 18vw 6vw 6vw;
+  grid-template-rows: auto;
+}
+
+#footer_menu {
+  /* grid-column: 3 / span 4; */
+  grid-column: 6 / span 1;
+  /* Aligns the footer content to the end of the grid box */
+  justify-self: end;
+  border-top: 1px solid var(--darken);
+}
+
+.contact_logo_oskar {
+  margin: 1vw;
+  width: 4rem;
+}
+
+/* .bottom_menu li,
+.bottom_menu a {
+  font-size: 1rem;
+  color: var(--darken);
+  text-decoration: none;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  margin-top: 0.5vw;
+}
+
+.bottom_menu a:hover {
+  text-decoration: underline;
+} */
+
+/* ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+  padding-left: 0;
+} */
+
+/* For tabelts - on screens that are 992px or less: */
+@media screen and (max-width: 992px) {
+  footer {
+    display: grid;
+    grid-template-columns: 6vw 21vw 21vw 21vw 21vw 6vw;
+  }
+
+  #footer_menu {
+    grid-column: 4 / span 1;
+    /* Aligns the footer content to the end of the grid box */
+    justify-self: end;
+    border-top: 1px solid var(--darken);
+  }
+}
+
+/* For phones - on screens that are 600px or less: */
+@media screen and (max-width: 600px) {
+  footer {
+    display: grid;
+    grid-template-columns: 24vw 24vw 24vw 24vw;
+  }
+
+  #footer_menu {
+    grid-column: 4 / span 1;
+    /* Aligns the footer content to the end of the grid box */
+    justify-self: end;
+    border-top: 1px solid var(--darken);
+  }
+
+  /* .bottom_menu li,
+  .bottom_menu a {
+    margin-top: 1vw;
+  } */
+}
