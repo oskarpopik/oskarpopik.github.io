@@ -495,19 +495,22 @@ main {
 .publication-year {
   font-size: 1.25rem;
   /* margin-top: 2vw; */
-  margin-left: 0;
+  margin-left: 1rem;
   font-weight: 600;
 }
 
 #publication-list {
   list-style: decimal;
   padding-left: 0;
-  margin-bottom: 1vw;
+  margin-bottom: 1rem;
+}
+
+#publication-list li {
+  margin-left: 3rem;
 }
 
 .publication-item {
   padding-bottom: 15px;
-  margin-left: 3vw;
 }
 
 .publication-title {
