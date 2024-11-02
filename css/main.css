@@ -385,8 +385,19 @@ main {
   text-decoration: none;
 }
 
+.img_thumbnails_container {
+  /* Ensures the image doesn’t overflow outside the container */
+  overflow: hidden;
+}
+
 .img_thumbnails {
   width: 100%;
+  /* Smooth zoom effect on hover */
+  transition: transform 0.5s ease;
+}
+
+.img_thumbnails_container:hover .img_thumbnails {
+  transform: scale(1.2);
 }
 
 /* For tabelts - on screens that are 992px or less: */
