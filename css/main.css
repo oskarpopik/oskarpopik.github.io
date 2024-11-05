@@ -226,7 +226,7 @@ main {
 
 /* For: index.html */
 
-.container {
+.animation_container {
   display: grid;
   justify-self: center;
   align-self: center;
@@ -243,6 +243,7 @@ main {
   padding-right: 20px;
   padding-bottom: 20px;
   /* border: 1px solid black; */
+  margin-bottom: 1vw;
 }
 
 .logo_letter_o {
@@ -327,6 +328,128 @@ main {
   100% {
     opacity: 1;
   }
+}
+
+.information_element_container {
+  /* Initially hidden */
+  opacity: 0;
+  visibility: hidden;
+  /* Fades in over 0.5 seconds */
+  transition: opacity 0.5s ease-in;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* New class to trigger the fade-in */
+.information_element_visible {
+  opacity: 1;
+  visibility: visible;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.about_thumbnails_index {
+  display: grid;
+  grid-column: 2 / 5;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  margin-bottom: 1.5vw;
+}
+
+/* Hide the second project image link on mobile */
+.desktop-only {
+  display: block;
+}
+
+.about_index {
+  font-size: 1rem;
+  color: var(--darken);
+  text-decoration: none;
+  text-align: center;
+}
+
+.contact_index {
+  font-size: 1rem;
+  color: var(--darken);
+  text-decoration: none;
+  text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+  /* Change to single-column layout on tablet or mobile */
+  .about_thumbnails_index {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  /* Hide the second project image link */
+  .desktop-only {
+    display: none;
+  }
+}
+
+.project_thumbnails_index {
+  display: grid;
+  grid-column: 2 / 5;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  margin-bottom: 1.5vw;
+}
+
+.grid_item_thumbnails_index {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+  /* Change to single-column layout on mobile */
+  .project_thumbnails_index {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  /* Hide the second project image link */
+  .desktop-only {
+    display: none;
+  }
+}
+
+.figure_thumbnails_index {
+  margin: 1vw;
+}
+
+.figure_thumbnails_index a {
+  font-size: 1rem;
+  color: var(--darken);
+  text-decoration: none;
+}
+
+.figure_thumbnails_index a:hover {
+  text-decoration: underline;
+}
+
+.img_thumbnails_container_index {
+  /* Ensures the image doesn’t overflow outside the container */
+  overflow: hidden;
+}
+
+.img_thumbnails_index {
+  width: 100%;
+  /* Smooth zoom effect on hover */
+  transition: transform 0.5s ease;
+}
+
+.img_thumbnails_container_index:hover .img_thumbnails_index {
+  transform: scale(1.2);
+}
+
+.more_projects_index {
+  font-size: 1rem;
+  color: var(--darken);
+  text-decoration: none;
+  text-align: center;
 }
 
 /* For: work.html */
@@ -728,27 +851,45 @@ footer {
   width: 4rem;
 }
 
-/* .bottom_menu li,
+.footer_menu_index {
+  grid-column: 6 / span 1;
+  /* Aligns the footer content to the end of the grid box */
+  justify-self: end;
+  border-top: 1px solid var(--darken);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in;
+}
+
+.footer_menu_visible {
+  grid-column: 6 / span 1;
+  /* Aligns the footer content to the end of the grid box */
+  justify-self: end;
+  border-top: 1px solid var(--darken);
+  opacity: 1;
+  visibility: visible;
+}
+
+.bottom_menu {
+  margin-top: 1vw;
+  margin-right: 1vw;
+}
+
+.bottom_menu li,
 .bottom_menu a {
   font-size: 1rem;
   color: var(--darken);
   text-decoration: none;
-  margin-left: 1vw;
-  margin-right: 1vw;
-  margin-top: 0.5vw;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 
 .bottom_menu a:hover {
   text-decoration: underline;
-} */
-
-/* ul {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  list-style: none;
-  padding-left: 0;
-} */
+}
 
 /* For tabelts - on screens that are 992px or less: */
 @media screen and (max-width: 992px) {
@@ -762,6 +903,15 @@ footer {
     /* Aligns the footer content to the end of the grid box */
     justify-self: end;
     border-top: 1px solid var(--darken);
+  }
+
+  .footer_menu_visible {
+    grid-column: 4 / span 1;
+    /* Aligns the footer content to the end of the grid box */
+    justify-self: end;
+    border-top: 1px solid var(--darken);
+    opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -777,6 +927,15 @@ footer {
     /* Aligns the footer content to the end of the grid box */
     justify-self: end;
     border-top: 1px solid var(--darken);
+  }
+
+  .footer_menu_visible {
+    grid-column: 4 / span 1;
+    /* Aligns the footer content to the end of the grid box */
+    justify-self: end;
+    border-top: 1px solid var(--darken);
+    opacity: 1;
+    visibility: visible;
   }
 
   /* .bottom_menu li,
