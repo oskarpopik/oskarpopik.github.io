@@ -430,6 +430,21 @@ main {
 }
 
 @media screen and (max-width: 992px) {
+  /* Change to double-column layout on tablets */
+  .project_thumbnails_index {
+    display: grid;
+    /* grid-template-columns: 1fr; */
+    grid-template-columns: repeat(2, 1fr); /* Two columns per row */
+    grid-auto-rows: auto; /* Automatically create new rows as needed */
+    gap: 10px; /* Optional: space between grid items */
+  }
+  /* Hide the second project image link */
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
   /* Change to single-column layout on mobile */
   .project_thumbnails_index {
     display: grid;
