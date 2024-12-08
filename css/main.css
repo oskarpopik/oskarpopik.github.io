@@ -603,6 +603,7 @@ main {
     /* margin-left: 14vw;
     margin-right: 14vw; */
     margin: 0 auto;
+    padding-bottom: 1rem;
   }
 }
 
