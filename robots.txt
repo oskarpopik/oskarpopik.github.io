@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://oskarpopik.github.io/sitemap.xml
