@@ -522,6 +522,7 @@ main {
   text-align: center;
   /* Center within the container */
   margin: 0 auto;
+  padding-bottom: 1rem;
 }
 
 .grid_item_thumbnails a:hover {
